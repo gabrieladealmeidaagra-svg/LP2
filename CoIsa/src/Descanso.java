@@ -1,22 +1,26 @@
 public class Descanso {
     private int horasDeDecanso;
-    private int numeroDeSemanas;
+    private int numerosDeSemana;
 
     public void defineHorasDescanso(int horasDeDescanso) {
         this.horasDeDecanso = horasDeDescanso;
     }
 
-    public void defineNumeroDeSemanas( int numeroDeSemanas) {
-        this.numeroDeSemanas = numeroDeSemanas;
+    public void defineNumeroSemanas( int numeroDeSemanas) {
+        this.numerosDeSemana = numerosDeSemana;
     }
 
-    public void getStatusGeral() {
-        double status = horasDeDecanso / numeroDeSemanas;
-        if(status >= 26) {
-            return "descansado";
+    public String getStatusGeral() {
+        if (numerosDeSemana == 0 || horasDeDecanso == 0) {
+            return "cansado";
         }
         else {
-            return "cansado";
+            double status = horasDeDecanso / numerosDeSemana;
+            if (status >= 26) {
+                return "descansado";
+            } else {
+                return "cansado";
+            }
         }
 
     }
