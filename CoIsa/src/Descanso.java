@@ -6,7 +6,7 @@ public class Descanso {
         this.horasDeDecanso = horasDeDescanso;
     }
 
-    public void defineNumeroSemanas( int numeroDeSemanas) {
+    public void defineNumeroSemanas( int numerosDeSemana) {
         this.numerosDeSemana = numerosDeSemana;
     }
 
@@ -18,6 +18,8 @@ public class Descanso {
             } else {
                 return "descansado";
             }
+        } else {
+            return "cansado";
         }
 
     }
