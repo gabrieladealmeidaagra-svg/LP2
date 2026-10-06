@@ -7,14 +7,17 @@ public class Disciplina {
     private double media;
 
     public Disciplina (String nomeDisciplina) {
+
         this.nomeDisciplina = nomeDisciplina;
     }
 
     public void cadastraHoras (int horasDeEstudo) {
-        this.horasDeEstudo = horasDeEstudo;
+
+        this.horasDeEstudo += horasDeEstudo;
     }
 
     public void cadastraNota (int nota, double valorNota) {
+
         this.notas[nota - 1] = valorNota;
     }
 

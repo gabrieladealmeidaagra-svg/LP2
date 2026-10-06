@@ -11,15 +11,12 @@ public class Descanso {
     }
 
     public String getStatusGeral() {
-        if (numerosDeSemana == 0 || horasDeDecanso == 0) {
-            return "cansado";
-        }
-        else {
+        if (numerosDeSemana != 0) {
             double status = horasDeDecanso / numerosDeSemana;
-            if (status >= 26) {
-                return "descansado";
-            } else {
+            if (status < 26) {
                 return "cansado";
+            } else {
+                return "descansado";
             }
         }
 

@@ -8,7 +8,9 @@ public class RegistroResumos {
 
     public void adiciona (String tema, String conteudo) {
         resumos[contador] = new Resumo (tema, conteudo);
-        contador ++;
+        if (contador < resumos.length) {
+            contador++;
+        }
     }
 
     public String[] pegaResumos() {
@@ -29,12 +31,9 @@ public class RegistroResumos {
     }
 
     public String imprimeResumos() {
-        String frase = "- " + contador + " " + "resumo(s) cadastrado(s)" + "\n";
+        String frase = "- " + contador + " " + "resumo(s) cadastrado(s)" + "\n" + "- ";
         for (int n = 0; n < contador; n ++) {
-            if (n == 0) {
-                frase += "- " + resumos[n].getTema() + " | ";
-            }
-            else if (n == contador - 1) {
+            if (n == contador - 1) {
                 frase += resumos[n].getTema();
             } else {
                 frase += resumos[n].getTema() + " | ";
